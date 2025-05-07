@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover DateSeed Coffee - a high antioxidant, caffeine-free alternative to traditional coffee. Shop now for a healthy, flavorful experience!">
+    <meta name="keywords" content="date seed coffee, caffeine-free coffee, high antioxidant coffee, healthy coffee alternative, date seed brew">
+    <meta name="author" content="DateSeed Coffee Brand">
+    <title>DateSeed Coffee - High Antioxidant, Caffeine-Free Bliss</title>
+    <script src="https://cdn.jsdelivr.net/npm/react@18.2.0/umd/react.development.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/react-dom@18.2.0/umd/react-dom.development.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@babel/standalone@7.22.5/babel.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/framer-motion@10.12.16/dist/framer-motion.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #FDF6F0;
+            color: #4A2C2A;
+            margin: 0;
+            padding: 0;
+        }
+
+        .hero-bg {
+            background: linear-gradient(135deg, #D4A276 0%, #A6744E 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%);
+        }
+
+        .animate-pulse-slow {
+            animation: pulse 3s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .hover-scale {
+            transition: transform 0.3s ease;
+        }
+
+        .hover-scale:hover {
+            transform: scale(1.05);
+        }
+
+        .error-boundary {
+            text-align: center;
+            padding: 20px;
+            color: #ff0000;
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel" data-presets="react">
+        const { motion } = window.FramerMotion;
+
+        // Error Boundary Component to catch rendering issues
+        class ErrorBoundary extends React.Component {
+            state = { hasError: false };
+
+            static getDerivedStateFromError(error) {
+                return { hasError: true };
+            }
+
+            render() {
+                if (this.state.hasError) {
+                    return <div className="error-boundary">Something went wrong. Please refresh the page.</div>;
+                }
+                return this.props.children;
+            }
+        }
+
+        // Components/Nav.js
+        const Nav = () => (
+            <nav className="fixed top-0 w-full bg-opacity-90 bg-[#FDF6F0] shadow-md z-10">
+                <div className="container mx-auto px-6 py-4 flex justify-between items-center">
+                    <h1 className="text-3xl font-bold text-[#4A2C2A]">DateSeed Coffee</h1>
+                    <ul className="flex space-x-6">
+                        <li><a href="#home" className="hover:text-[#D4A276] transition-colors">Home</a></li>
+                        <li><a href="#products" className="hover:text-[#D4A276] transition-colors">Products</a></li>
+                        <li><a href="#about" className="hover:text-[#D4A276] transition-colors">About</a></li>
+                        <li><a href="#contact" className="hover:text-[#D4A276] transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+            </nav>
+        );
+
+        // Components/Hero.js
+        const Hero = () => (
+            <section id="home" className="hero-bg h-screen flex items-center justify-center text-center">
+                <motion.div
+                    initial={{ opacity: 0, y: 50 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 1 }}
+                    className="text-white"
+                >
+                    <h2 className="text-5xl md:text-7xl font-bold mb-4 animate-pulse-slow">
+                        Caffeine-Free, Antioxidant-Rich
+                    </h2>
+                    <p className="text-xl md:text-2xl mb-6">
+                        Experience the bold flavor of DateSeed Coffee – nature’s finest brew.
+                    </p>
+                    <a
+                        href="#products"
+                        className="inline-block px-8 py-3 bg-[#4A2C2A] text-white rounded-full hover:bg-[#D4A276] transition-colors"
+                    >
+                        Shop Now
+                    </a>
+                </motion.div>
+            </section>
+        );
+
+        // Components/ProductCard.js
+        const ProductCard = ({ name, price, img }) => (
+            <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5 }}
+                className="bg-white p-6 rounded-lg shadow-lg hover-scale"
+            >
+                <img
+                    src={img}
+                    alt={`${name} - High antioxidant, caffeine-free coffee`}
+                    className="w-full h-48 object-cover rounded-md mb-4"
+                />
+                <h3 className="text-xl font-semibold mb-2">{name}</h3>
+                <p className="text-lg font-bold text-[#D4A276] mb-4">{price}</p>
+                <button className="w-full px-4 py-2 bg-[#4A2C2A] text-white rounded-full hover:bg-[#D4A276] transition-colors">
+                    Add to Cart
+                </button>
+            </motion.div>
+        );
+
+        // Components/Products.js
+        const Products = () => {
+            const productData = [
+                { name: "Original DateSeed Brew", price: "₹599", img: "https://via.placeholder.com/300x200?text=Original+Brew" },
+                { name: "Vanilla DateSeed Blend", price: "₹649", img: "https://via.placeholder.com/300x200?text=Vanilla+Blend" },
+                { name: "Spiced DateSeed Mix", price: "₹679", img: "https://via.placeholder.com/300x200?text=Spiced+Mix" },
+            ];
+
+            return (
+                <section id="products" className="py-16 bg-[#FDF6F0]">
+                    <div className="container mx-auto px-6">
+                        <h2 className="text-4xl font-bold text-center mb-12">Our Products</h2>
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                            {productData.map((product, index) => (
+                                <ProductCard
+                                    key={index}
+                                    name={product.name}
+                                    price={product.price}
+                                    img={product.img}
+                                />
+                            ))}
+                        </div>
+                    </div>
+                </section>
+            );
+        };
+
+        // Components/About.js
+        const About = () => (
+            <section id="about" className="py-16 bg-[#F9E8D9]">
+                <div className="container mx-auto px-6 text-center">
+                    <h2 className="text-4xl font-bold mb-6">Why DateSeed Coffee?</h2>
+                    <p className="text-lg mb-8 max-w-2xl mx-auto">
+                        Made from premium date seeds, our coffee is packed with antioxidants, free from caffeine, and offers a rich, bold flavor. Perfect for a healthy lifestyle without sacrificing taste.
+                    </p>
+                    <motion.img
+                        src="https://via.placeholder.com/600x300?text=DateSeed+Farm"
+                        alt="DateSeed Coffee farm - sustainable sourcing"
+                        className="mx-auto rounded-lg shadow-md"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ duration: 1 }}
+                    />
+                </div>
+            </section>
+        );
+
+        // Components/Contact.js
+        const Contact = () => (
+            <section id="contact" className="py-16 bg-[#FDF6F0]">
+                <div className="container mx-auto px-6 text-center">
+                    <h2 className="text-4xl font-bold mb-6">Get in Touch</h2>
+                    <p className="text-lg mb-8">Have questions? Reach out to us!</p>
+                    <div className="max-w-md mx-auto">
+                        <input
+                            type="email"
+                            placeholder="Your Email"
+                            className="w-full p-3 mb-4 border border-[#4A2C2A] rounded-full focus:outline-none focus:border-[#D4A276]"
+                        />
+                        <textarea
+                            placeholder="Your Message"
+                            className="w-full p-3 mb-4 border border-[#4A2C2A] rounded-lg focus:outline-none focus:border-[#D4A276]"
+                            rows="4"
+                        ></textarea>
+                        <button className="w-full px-4 py-2 bg-[#4A2C2A] text-white rounded-full hover:bg-[#D4A276] transition-colors">
+                            Send Message
+                        </button>
+                    </div>
+                </div>
+            </section>
+        );
+
+        // Components/Footer.js
+        const Footer = () => (
+            <footer className="py-6 bg-[#4A2C2A] text-white text-center">
+                <p>© 2025 DateSeed Coffee. All rights reserved.</p>
+                <div className="flex justify-center space-x-4 mt-4">
+                    <a href="#" className="hover:text-[#D4A276] transition-colors">Instagram</a>
+                    <a href="#" className="hover:text-[#D4A276] transition-colors">Twitter</a>
+                    <a href="#" className="hover:text-[#D4A276] transition-colors">Facebook</a>
+                </div>
+            </footer>
+        );
+
+        // App.js
+        const App = () => (
+            <ErrorBoundary>
+                <div>
+                    <Nav />
+                    <Hero />
+                    <Products />
+                    <About />
+                    <Contact />
+                    <Footer />
+                </div>
+            </ErrorBoundary>
+        );
+
+        // Render the app with a fallback
+        const rootElement = document.getElementById('root');
+        if (rootElement) {
+            const root = ReactDOM.createRoot(rootElement);
+            root.render(<App />);
+        } else {
+            document.body.innerHTML = '<div className="error-boundary">Error: Root element not found.</div>';
+        }
+    </script>
+</body>
+</html>
