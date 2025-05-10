@@ -6,7 +6,7 @@ const Nav = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
+  padding: 0.9rem 0;  // Changed from 2rem to 0 since we're adding our own padding
   background-color: ${theme.colors.white};
   position: fixed;
   width: 100%;
@@ -83,7 +83,7 @@ const CtaButton = styled(Link)`
 const Header = () => {
   return (
     <Nav>
-      <NavLinks>
+      <NavLinks style={{ marginRight: 'auto', paddingLeft: '2rem' }}>
         <NavLink to="/shop">Shop</NavLink>
         <NavLink to="/learn">Learn</NavLink>
       </NavLinks>
@@ -94,7 +94,7 @@ const Header = () => {
         </Link>
       </LogoContainer>
       
-      <NavLinks>
+      <NavLinks style={{ marginLeft: 'auto', paddingRight: '2rem' }}>
         <NavLink to="/contact">Contact</NavLink>
         <NavLink to="/about">About</NavLink>
         <CtaButton to="/sample">Free Sample</CtaButton>

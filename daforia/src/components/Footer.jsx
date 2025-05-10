@@ -172,7 +172,7 @@ const Footer = () => {
       </FooterContent>
 
       <Copyright>
-        &copy; {new Date().getFullYear()} Coffee Alternative Co. All rights reserved.
+        &copy; {new Date().getFullYear()} Daforia Coffee Co. All rights reserved.
       </Copyright>
     </FooterContainer>
   );
