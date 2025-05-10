@@ -132,7 +132,7 @@ const Footer = () => {
             <li><FooterLink to="/">Home</FooterLink></li>
             <li><FooterLink to="/shop">Shop</FooterLink></li>
             <li><FooterLink to="/about">About Us</FooterLink></li>
-            <li><FooterLink to="/contact">Contact</FooterLink></li>
+            <li><FooterLink to="/blogs">Blogs</FooterLink></li>
           </FooterLinks>
         </FooterSection>
 

@@ -6,7 +6,7 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import Shop from './pages/Shop';
 import Learn from './pages/Learn';
-import Contact from './pages/Contact';
+import Blogs from './pages/Blogs';
 import About from './pages/About';
 import SampleForm from './components/SampleFrorm';
 
@@ -38,7 +38,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/shop" element={<Shop />} />
             <Route path="/learn" element={<Learn />} />
-            <Route path="/contact" element={<Contact />} />
+            <Route path="/blogs" element={<Blogs />} />
             <Route path="/about" element={<About />} />
             <Route path="/sample" element={<SampleForm />} />
           </Routes>
