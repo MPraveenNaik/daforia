@@ -1,17 +1,12 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { theme } from '../theme';
-const HeaderContainer = styled.header`
-  position: fixed;
-  width: 100%;
-  top: 0;
-  z-index: 1000;
-`;
+
 const Nav = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
+  padding: 0.9rem 0;  // Changed from 2rem to 0 since we're adding our own padding
   background-color: ${theme.colors.white};
   position: fixed;
   width: 100%;
@@ -51,7 +46,7 @@ const NavLink = styled(Link)`
   }
 `;
 
-const CtaButton = styled.a`
+const CtaButton = styled(Link)`
   padding: 0.5rem 1.5rem;
   background-color: ${theme.colors.darkBrown};
   color: ${theme.colors.white};
@@ -88,28 +83,21 @@ const CtaButton = styled.a`
 const Header = () => {
   return (
     <Nav>
-      <NavLinks>
+      <NavLinks style={{ marginRight: 'auto', paddingLeft: '2rem' }}>
         <NavLink to="/shop">Shop</NavLink>
         <NavLink to="/learn">Learn</NavLink>
       </NavLinks>
       
       <LogoContainer>
         <Link to="/">
-          <Logo src="/logo192.png" alt="Daforia Logo" />
+          <Logo src="/logo192.png" alt="Company Logo" />
         </Link>
       </LogoContainer>
       
-      <NavLinks>
+      <NavLinks style={{ marginLeft: 'auto', paddingRight: '2rem' }}>
         <NavLink to="/contact">Contact</NavLink>
         <NavLink to="/about">About</NavLink>
-        <NavLink to="/blogs">Blogs</NavLink>
-        <CtaButton 
-          href="https://docs.google.com/forms/d/e/1FAIpQLSclPZWzV1qDtGe8kamSDut1xFXSW5WsowFN5UHSx9XwzXR-xA/viewform"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Free Sample
-        </CtaButton>
+        <CtaButton to="/sample">Free Sample</CtaButton>
       </NavLinks>
     </Nav>
   );
