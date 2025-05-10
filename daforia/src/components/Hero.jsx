@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
 import { theme } from '../theme';
 
 const BannerContainer = styled.div`
@@ -35,7 +34,7 @@ const BannerSubtitle = styled.p`
   margin-right: auto;
 `;
 
-const BannerButton = styled(Link)`
+const BannerButton = styled.a`  // Changed from styled(Link) to styled.a
   display: inline-block;
   background: ${theme.colors.darkBrown};
   color: ${theme.colors.white};
@@ -68,7 +67,7 @@ const BannerButton = styled(Link)`
   }
 `;
 
-const Hero= () => {
+const Hero = () => {
   return (
     <BannerContainer>
       <BannerContent>
@@ -76,7 +75,13 @@ const Hero= () => {
         <BannerSubtitle>
           Experience our rich, full-bodied alternative that tastes like coffee but without the jitters
         </BannerSubtitle>
-        <BannerButton to="/sample">Book a Free Sample</BannerButton>
+        <BannerButton 
+          href="https://docs.google.com/forms/d/e/1FAIpQLSclPZWzV1qDtGe8kamSDut1xFXSW5WsowFN5UHSx9XwzXR-xA/viewform"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Book a Free Sample
+        </BannerButton>
       </BannerContent>
     </BannerContainer>
   );

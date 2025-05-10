@@ -8,6 +8,7 @@ import Shop from './pages/Shop';
 import Learn from './pages/Learn';
 import Blogs from './pages/Blogs';
 import About from './pages/About';
+import Contact from './pages/Contact';
 import SampleForm from './components/SampleFrorm';
 
 // Global app container with theme colors
@@ -40,6 +41,7 @@ function App() {
             <Route path="/learn" element={<Learn />} />
             <Route path="/blogs" element={<Blogs />} />
             <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact/>}/>
             <Route path="/sample" element={<SampleForm />} />
           </Routes>
         </MainContent>

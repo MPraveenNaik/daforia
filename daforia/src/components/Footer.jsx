@@ -70,20 +70,43 @@ const FooterLink = styled(Link)`
   }
 `;
 
-const SocialIcons = styled.div`
-  display: flex;
-  gap: 1rem;
-  margin-top: 1rem;
+const ContactInfo = styled.div`
+  p {
+    margin-bottom: 0.8rem;
+    display: flex;
+    align-items: center;
+    
+    svg, i {
+      margin-right: 10px;
+      color: ${theme.colors.burntOrange};
+    }
+  }
 `;
 
-const SocialIcon = styled.a`
-  color: ${theme.colors.darkBrown};
-  font-size: 1.5rem;
-  transition: all 0.3s ease;
+const DistributorCallout = styled.div`
+  background-color: ${theme.colors.cream};
+  padding: 1rem;
+  border-radius: 4px;
+  margin-top: 1rem;
   
-  &:hover {
+  h4 {
     color: ${theme.colors.burntOrange};
-    transform: translateY(-2px);
+    margin-bottom: 0.5rem;
+  }
+  
+  p {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  a {
+    color: ${theme.colors.darkBrown};
+    font-weight: bold;
+    text-decoration: none;
+    
+    &:hover {
+      text-decoration: underline;
+    }
   }
 `;
 
@@ -93,33 +116,6 @@ const Copyright = styled.div`
   padding-top: 2rem;
   border-top: 1px solid ${theme.colors.cream};
   color: ${theme.colors.darkBrown};
-`;
-
-const NewsletterForm = styled.form`
-  display: flex;
-  margin-top: 1rem;
-  
-  input {
-    flex: 1;
-    padding: 0.5rem;
-    border: 1px solid ${theme.colors.cream};
-    border-radius: 4px 0 0 4px;
-    font-size: 0.9rem;
-  }
-  
-  button {
-    padding: 0.5rem 1rem;
-    background-color: ${theme.colors.darkBrown};
-    color: ${theme.colors.white};
-    border: none;
-    border-radius: 0 4px 4px 0;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    
-    &:hover {
-      background-color: ${theme.colors.burntOrange};
-    }
-  }
 `;
 
 const Footer = () => {
@@ -137,37 +133,32 @@ const Footer = () => {
         </FooterSection>
 
         <FooterSection>
-          <h3>Our Products</h3>
-          <FooterLinks>
-            <li><FooterLink to="/shop/coffee-alternatives">Coffee Alternatives</FooterLink></li>
-            <li><FooterLink to="/shop/bundles">Bundles</FooterLink></li>
-            <li><FooterLink to="/shop/limited-editions">Limited Editions</FooterLink></li>
-            <li><FooterLink to="/shop/gift-cards">Gift Cards</FooterLink></li>
-          </FooterLinks>
-        </FooterSection>
-
-        <FooterSection>
           <h3>Support</h3>
           <FooterLinks>
             <li><FooterLink to="/faq">FAQs</FooterLink></li>
             <li><FooterLink to="/shipping">Shipping Policy</FooterLink></li>
             <li><FooterLink to="/returns">Returns & Refunds</FooterLink></li>
-            <li><FooterLink to="/contact">Contact Support</FooterLink></li>
+            <li><FooterLink to="/contact">Contact Us</FooterLink></li>
           </FooterLinks>
         </FooterSection>
 
         <FooterSection>
-          <h3>Newsletter</h3>
-          <p>Subscribe for updates and special offers</p>
-          <NewsletterForm>
-            <input type="email" placeholder="Your email" />
-            <button type="submit">Join</button>
-          </NewsletterForm>
-          <SocialIcons>
-            <SocialIcon href="#"><i className="fab fa-instagram"></i></SocialIcon>
-            <SocialIcon href="#"><i className="fab fa-facebook"></i></SocialIcon>
-            <SocialIcon href="#"><i className="fab fa-twitter"></i></SocialIcon>
-          </SocialIcons>
+          <h3>Contact Us</h3>
+          <ContactInfo>
+            <p><i className="fas fa-map-marker-alt"></i> Hyderabad, Telangana</p>
+            <p><i className="fas fa-phone-alt"></i> +91 8500 419 416</p>
+            <p><i className="fas fa-envelope"></i>praveenworks416@gmail.com</p>
+          </ContactInfo>
+        </FooterSection>
+
+        <FooterSection>
+          <h3>Become a Distributor</h3>
+          <DistributorCallout>
+            <h4>We're Expanding!</h4>
+            <p>Looking for distributors across Andhra Pradesh & Telangana</p>
+            <p>Contact us at <a href="tel:+918500419416">+91 8500 419 416</a></p>
+            <p>or email <a href="mailto:distributors@daforiacoffee.com">praveenworks416@gmail.com</a></p>
+          </DistributorCallout>
         </FooterSection>
       </FooterContent>
 

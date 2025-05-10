@@ -80,80 +80,19 @@ const Contact = () => {
           <h2 style={styles.sectionTitle}>Customer Support</h2>
           <div style={styles.detail}>
             <h3 style={styles.detailTitle}>Phone</h3>
-            <p><a href="tel:+919381259795" style={styles.link}>+91 93812 59795</a></p>
+            <p><a href="tel:+918500419416" style={styles.link}>+91 8500419416</a></p>
           </div>
           <div style={styles.detail}>
-            <h3 style={styles.detailTitle}>Email</h3>
-            <p><a href="mailto:help@daforia.co" style={styles.link}>help@daforia.co</a></p>
+            <h3 style={styles.detailTitle}>Email for orders</h3>
+            <p><a href="mailto:@daforia.com" style={styles.link}>praveenworks416@gmail.com</a></p>
+          </div>
+          <div style={styles.detail}>
+            <h3 style={styles.detailTitle}>Email for Retail and distribution</h3>
+            <p><a href="mailto:@daforia.co" style={styles.link}>praveenworks416@gmail.com</a></p>
           </div>
           <div style={styles.detail}>
             <h3 style={styles.detailTitle}>Working Hours</h3>
             <p>Monday to Saturday, 10 AM to 7 PM</p>
-          </div>
-        </div>
-
-        {/* Department Contacts Section */}
-        <div style={styles.section}>
-          <h2 style={styles.sectionTitle}>Department Contacts</h2>
-          <div style={styles.grid}>
-            <div style={styles.detail}>
-              <h3 style={styles.detailTitle}>Products & Orders</h3>
-              <p><a href="mailto:help@daforia.co" style={styles.link}>help@daforia.co</a></p>
-            </div>
-            <div style={styles.detail}>
-              <h3 style={styles.detailTitle}>Subscriptions</h3>
-              <p><a href="mailto:subscription@daforia.co" style={styles.link}>subscription@daforia.co</a></p>
-            </div>
-            <div style={styles.detail}>
-              <h3 style={styles.detailTitle}>Careers</h3>
-              <p><a href="mailto:jobs@daforia.co" style={styles.link}>jobs@daforia.co</a></p>
-            </div>
-            <div style={styles.detail}>
-              <h3 style={styles.detailTitle}>Bulk Orders</h3>
-              <p><a href="mailto:business@daforia.co" style={styles.link}>business@daforia.co</a></p>
-            </div>
-            <div style={styles.detail}>
-              <h3 style={styles.detailTitle}>Marketing</h3>
-              <p><a href="mailto:marketing@daforia.co" style={styles.link}>marketing@daforia.co</a></p>
-            </div>
-            <div style={styles.detail}>
-              <h3 style={styles.detailTitle}>Events</h3>
-              <p><a href="mailto:events@daforia.co" style={styles.link}>events@daforia.co</a></p>
-            </div>
-          </div>
-        </div>
-
-        {/* Company Information Section */}
-        <div style={styles.section}>
-          <h2 style={styles.sectionTitle}>Company Information</h2>
-          <div style={styles.detail}>
-            <h3 style={styles.detailTitle}>Registered Name</h3>
-            <p>Daforia Coffee Private Limited</p>
-          </div>
-          <div style={styles.detail}>
-            <h3 style={styles.detailTitle}>CIN Number</h3>
-            <p>praveen cin number here</p>
-          </div>
-          <div style={styles.detail}>
-            <h3 style={styles.detailTitle}>Registered Office</h3>
-            <p>21, Sri Laxmi Colony, Mahabubnagar- 509001</p>
-          </div>
-          <div style={styles.detail}>
-            <h3 style={styles.detailTitle}>Warehouse Address</h3>
-            <p>Sri Ram Colony, Yenugonda,<br />Tehsil – Mahabubnagar, Dist. Telangana – 509001</p>
-          </div>
-        </div>
-
-        {/* Grievance Officer Section */}
-        <div style={styles.section}>
-          <h2 style={styles.sectionTitle}>Grievance Officer</h2>
-          <div style={styles.detail}>
-            <h3 style={styles.detailTitle}>Name</h3>
-            <p>Mahatma Gandhi</p>
-          </div>
-          <div style={styles.detail}>
-            <h3 style={styles.detailTitle}>Email</h3>
-            <p><a href="mailto:mahatma@daforia.co" style={styles.link}>mahatma@daforia.co</a></p>
           </div>
         </div>
       </div>
