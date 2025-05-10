@@ -95,7 +95,7 @@ const Header = () => {
       </LogoContainer>
       
       <NavLinks>
-        <NavLink to="/contact">Contact</NavLink>
+        <NavLink to="/blogs">Blogs</NavLink>
         <NavLink to="/about">About</NavLink>
         <CtaButton to="/sample">Free Sample</CtaButton>
       </NavLinks>
