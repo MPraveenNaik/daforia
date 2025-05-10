@@ -94,13 +94,12 @@ const Header = () => {
         </Link>
       </LogoContainer>
       
-<<<<<<< HEAD
       <NavLinks style={{ marginLeft: 'auto', paddingRight: '2rem' }}>
         <NavLink to="/contact">Contact</NavLink>
 =======
       
         <NavLink to="/blogs">Blogs</NavLink>
->>>>>>> about-learn
+
         <NavLink to="/about">About</NavLink>
         <CtaButton to="/sample">Free Sample</CtaButton>
       </NavLinks>
