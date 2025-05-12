@@ -6,7 +6,7 @@ const Nav = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.9rem 0;  // Changed from 2rem to 0 since we're adding our own padding
+  padding: 0.9rem 0;
   background-color: ${theme.colors.white};
   position: fixed;
   width: 100%;
@@ -46,7 +46,7 @@ const NavLink = styled(Link)`
   }
 `;
 
-const CtaButton = styled(Link)`
+const CtaButton = styled.a`
   padding: 0.5rem 1.5rem;
   background-color: ${theme.colors.darkBrown};
   color: ${theme.colors.white};
@@ -57,6 +57,7 @@ const CtaButton = styled(Link)`
   transition: all 0.4s ease;
   position: relative;
   overflow: hidden;
+  cursor: pointer;
   
   &::before {
     content: '';
@@ -97,7 +98,13 @@ const Header = () => {
       <NavLinks style={{ marginLeft: 'auto', paddingRight: '2rem' }}>
         <NavLink to="/contact">Contact</NavLink>
         <NavLink to="/about">About</NavLink>
-        <CtaButton to="/sample">Free Sample</CtaButton>
+        <CtaButton 
+          href="https://docs.google.com/forms/d/e/1FAIpQLSclPZWzV1qDtGe8kamSDut1xFXSW5WsowFN5UHSx9XwzXR-xA/viewform"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Free Sample
+        </CtaButton>
       </NavLinks>
     </Nav>
   );
